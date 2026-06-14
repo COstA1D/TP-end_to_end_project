@@ -2,7 +2,7 @@
 
 Учебный сквозной data-проект с поэтапной разработкой по неделям.
 
-## Project structure
+## Структура проекта
 
 - `src/` — исходный код проекта
 - `data/` — данные проекта
@@ -12,37 +12,54 @@
 - `tests/` — тесты
 - `scripts/` — служебные скрипты
 
-## Windows setup
-1. Install Anaconda or Miniconda.
-2. Open **Anaconda Prompt**.
-3. Go to the project folder:
+## Запуск на Windows
+
+1. Установить Anaconda или Miniconda.
+2. Открыть **Anaconda Prompt**.
+3. Перейти в папку проекта:
    ```bat
    cd C:\Users\***\OneDrive\Desktop\е\end-to-end-project
    ```
-4. Run:
+4. Выполнить команду:
    ```bat
    scripts\setup_env.bat
    ```
-5. If `conda` is not available in the standard terminal, run the script from **Anaconda Prompt**.
+
+Если в обычном терминале команда `conda` недоступна, запускать скрипт нужно именно через **Anaconda Prompt**.
 
 ## Smoke test
-The script `scripts\setup_env.bat` automatically:
-- finds `conda`;
-- creates the `tp_project_env` environment if it does not exist;
-- installs dependencies from `requirements.txt`;
-- runs `broken_env.py`.
 
-Successful result:
-- the path to the active Python interpreter is printed;
-- the installed `pandas` version is printed;
-- the final line is:
+Скрипт `scripts\setup_env.bat` автоматически:
+
+- находит `conda`;
+- создаёт окружение `tp_project_env`, если оно ещё не существует;
+- устанавливает зависимости из `requirements.txt`;
+- запускает `broken_env.py`.
+
+Успешный результат:
+
+- выводится путь к активному интерпретатору Python;
+- выводится версия установленного `pandas`;
+- в конце появляется строка:
   ```text
   [OK] Environment is ready
   ```
 
-## Progress by weeks 
-- [x] Week 1 - Conda setup, repository structure, smoke test
-- [ ] Week 2
+## Статус Week 2
+
+Для второй недели подготовлена шаблонная версия слоя Extract:
+
+- чтение конфигурации из YAML;
+- HTTP GET-запрос с `timeout`;
+- обработка сетевых, HTTP- и JSON-ошибок;
+- сохранение raw JSON в `data/raw/...`.
+
+Финальная конфигурация API для семестрового варианта будет добавлена после получения официального файла `variant_XX.yml` из учебных материалов.
+
+## Прогресс по неделям
+
+- [x] Week 1 — настройка Conda, структура репозитория, smoke test
+- [ ] Week 2 — HTTP/API и сохранение raw JSON
 - [ ] Week 3
 - [ ] Week 4
 - [ ] Week 5
@@ -54,4 +71,4 @@ Successful result:
 - [ ] Week 11
 - [ ] Week 12
 - [ ] Week 13
-- [ ] Week 14 
+- [ ] Week 14
