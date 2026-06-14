@@ -3,7 +3,14 @@
 Учебный сквозной data-проект с поэтапной разработкой по неделям.
 
 ## Project structure
-...
+
+- `src/` — исходный код проекта
+- `data/` — данные проекта
+- `notebooks/` — исследовательские ноутбуки
+- `docs/` — документация
+- `configs/` — конфигурационные файлы
+- `tests/` — тесты
+- `scripts/` — служебные скрипты
 
 ## Windows setup
 ...
@@ -12,7 +19,7 @@
 ...
 
 ## Progress by weeks 
-- [x] Week 1
+- [x] Week 1 - Conda setup, repository structure, smoke test
 - [ ] Week 2
 - [ ] Week 3
 - [ ] Week 4
