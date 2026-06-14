@@ -23,6 +23,7 @@
    ```bat
    scripts\setup_env.bat
    ```
+5. If `conda` is not available in the standard terminal, run the script from **Anaconda Prompt**.
 
 ## Smoke test
 The script `scripts\setup_env.bat` automatically:
