@@ -1,44 +1,61 @@
-# Data Contract
+# Контракт данных
 
-## Current status
-Week 1 initializes the repository and environment only.
+## Текущий вариант
 
-## Planned content
-This document will later describe:
-- data source;
-- schema and columns;
-- refresh frequency;
-- quality rules;
-- storage layers (`raw`, `normalized`, `mart`).
-
-## Current status
-Week 2 implements a template version of the Extract layer.
-
-The final semester-specific API configuration will be added after receiving the official `variant_XX.yml` file from the course materials.
-
-## Planned source description
-- Source type: `TBD`
-- Theme: `TBD`
+- Variant ID: `02`
+- Тема: Погода (прогноз) — Санкт-Петербург
+- Source type: `open_meteo`
+- Город: Санкт-Петербург
+- City ID: `RU_LED`
+- Координаты: `59.9311, 30.3609`
+- Часовой пояс: `Europe/Moscow`
 
 ## API
-- Base URL: `TBD`
-- Method: `GET`
-- Request template: `TBD`
-- Parameters: `TBD`
 
-## Load frequency
-- Manual запуск during development
-- Planned automation in later weeks
+- Endpoint: `https://api.open-meteo.com/v1/forecast`
+- HTTP-метод: `GET`
+- API-ключ: не требуется
+- Период прогноза: 7 дней
+- Единица скорости ветра: км/ч
 
-## Raw layer
-Raw API responses are saved without transformations for reproducibility:
+### Параметры
+
+- `latitude`: `59.9311`
+- `longitude`: `30.3609`
+- `timezone`: `Europe/Moscow`
+- `forecast_days`: `7`
+- `wind_speed_unit`: `kmh`
+- `hourly`:
+  - `temperature_2m`
+  - `relative_humidity_2m`
+  - `precipitation`
+  - `wind_speed_10m`
+
+## Raw-слой
+
+Исходный JSON-ответ сохраняется без преобразований в:
 
 ```text
-data/raw/variant_XX/YYYY-MM-DD_HH-MM-SS.json
+data/raw/variant_02/YYYY-MM-DD_HH-MM-SS.json
 ```
 
-## Notes / limitations
-- Timeout is required to prevent hanging requests.
-- HTTP errors must be handled explicitly.
-- JSON parsing must be protected from invalid responses.
-- Final values will be filled in after receiving the official variant configuration.
+Одна загрузка создаёт один JSON-файл с временной меткой в имени.
+
+## Ограничения
+
+- Для запроса используется обязательный timeout.
+- Сетевые ошибки обрабатываются явно.
+- Неуспешные HTTP-статусы не сохраняются как успешные данные.
+- Ответ должен быть корректным JSON.
+- На Week 2 данные не очищаются и не преобразуются.
+- Временные метки возвращаются в часовом поясе `Europe/Moscow`.
+- `temperature_2m` измеряется в °C.
+- `relative_humidity_2m` измеряется в процентах.
+- `precipitation` измеряется в мм.
+- `wind_speed_10m` измеряется в км/ч.
+
+## Планируемая частота загрузки
+
+На Week 2 запуск выполняется вручную.
+
+Автоматизация загрузки будет добавлена на следующих неделях.
