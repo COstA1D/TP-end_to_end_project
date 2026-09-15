@@ -1,13 +1,16 @@
 # Implementation Plan
 
-## Week 1 goals
-- Install Anaconda and verify that `conda` works.
-- Create reproducible environment setup with `scripts/setup_env.bat`.
-- Create base repository structure for the end-to-end data project.
-- Add initial project documentation.
+## Цели Week 1
+- Установить Anaconda и проверить, что conda работает.
 
-## Notes
-Using `python -m pip install ...` is safer than plain `pip install`, because plain `pip` may point to another Python interpreter in the system PATH.
+- Создать воспроизводимую настройку окружения с помощью scripts/setup_env.bat.
+
+- Создать базовую структуру репозитория для end-to-end проекта.
+
+- Добавить начальную документацию проекта.
+
+## Примечания
+Использование python -m pip install ... безопаснее, чем обычное pip install, потому что обычная команда pip может указывать на другой интерпретатор Python в системном PATH.H.
 
 ## Week 2 — Часть 0: наблюдения
 
