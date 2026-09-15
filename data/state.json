@@ -1,0 +1,8 @@
+{
+  "variant": "variant_02",
+  "source_type": "open-meteo",
+  "mode": "incremental",
+  "watermark": "2026-09-21",
+  "last_raw_file": "data\\raw\\variant_02\\2026-09-15_03-46-15.json",
+  "last_successful_run_utc": "2026-09-15T11:01:11.577086+00:00"
+}
