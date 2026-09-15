@@ -126,7 +126,7 @@
 - Используется транзакция `engine.begin()`.
 - Повторная загрузка не создаёт дубликаты.
 - SQL-проверки находятся в `docs/sql_checks.md`.
-- [ ] Week 6
+- [x] Week 6 - добавлен ETL pipeline с full incremental и state
 - [ ] Week 7
 - [ ] Week 8
 - [ ] Week 9
