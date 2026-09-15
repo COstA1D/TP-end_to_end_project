@@ -1,3 +1,6 @@
 pandas
-requests
+numpy
 pyyaml
+matplotlib
+sqlalchemy
+psycopg2-binary
